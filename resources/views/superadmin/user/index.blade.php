@@ -1,2 +1,5 @@
 @extends('layouts.app')
-{{-- @livewire('superadmin.user.index') --}}
+@section('title', 'Data Users')
+@section('content')
+    @livewire('superadmin.user.index')
+@endsection
