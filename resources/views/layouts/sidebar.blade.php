@@ -22,7 +22,7 @@
                         </li>
                         <li class="nav-header"> SUPER ADMIN</li>
                          <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a wire:navigate href="{{ route('superadmin.user.index') }}" class="nav-link @yield('menuSuperadminUser')">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
                                    Users
@@ -30,7 +30,7 @@
                             </a>
                         </li>
                          <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a wire:navigate href="{{ route('superadmin.kategori.index') }}" class="nav-link @yield('menuSuperadminKategori')">
                                 <i class="nav-icon fas fa-list"></i>
                                 <p>
                                    Kategori
@@ -38,7 +38,7 @@
                             </a>
                         </li>
                          <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a wire:navigate href="{{ route('superadmin.barang.index') }}" class="nav-link @yield('menuSuperadminBarang')">
                                 <i class="nav-icon fas fa-warehouse"></i>
                                 <p>
                                    Barang
