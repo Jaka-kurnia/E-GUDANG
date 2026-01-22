@@ -21,7 +21,6 @@
         @yield('content')
 
         @include('layouts.foter')
-
     </div>
 
     @include('layouts.script')

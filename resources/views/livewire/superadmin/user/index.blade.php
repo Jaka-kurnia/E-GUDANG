@@ -55,7 +55,10 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        Isi Content Here
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                            </table>
+                        </div>
                     </div>
                 </div>
         </section>
