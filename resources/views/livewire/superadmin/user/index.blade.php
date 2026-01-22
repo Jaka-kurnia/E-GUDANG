@@ -55,9 +55,62 @@
                         </div>
                     </div>
                     <div class="card-body">
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div class="col-2">
+                                <select wire:model.live="paginate" class="form-control">
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <input wire:model.live="search" type="text" placeholder="Pencarian..." class="form-control">
+                            </div>
+                        </div>
                         <div class="table-responsive">
                             <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>
+                                            <i class="fas fa-cog"></i>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($user as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>
+                                                @if ($item->role == 'Super Admin')
+                                                    <span class="badge badge-info">
+                                                        {{ $item->role }}
+                                                    </span>
+                                                @else
+                                                    <span class="badge badge-success">
+                                                        {{ $item->role }}
+                                                    </span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-warning text-white">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-danger text-white">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
+                            {{ $user->links() }}
                         </div>
                     </div>
                 </div>
